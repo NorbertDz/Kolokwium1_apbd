@@ -35,17 +35,17 @@ public class bookingsController : ControllerBase
             return BadRequest("Invalid appointment data.");
 
 
-        var createdAppointment = _iaddReservationService.addReservation(getattractions_booking);
-        if (createdAppointment.Result == -1)
+        var addReservation = _iaddReservationService.addReservation(getattractions_booking);
+        if (addReservation.Result == -1)
             return BadRequest("Appointment already exists.");
-        else if (createdAppointment.Result == -2)
+        else if (addReservation.Result == -2)
             return NotFound("Patient or doctor not found.");
-        else if (createdAppointment.Result == -3)
+        else if (addReservation.Result == -3)
             return NotFound("Service not found.");
-        else if (createdAppointment.Result == -4)
+        else if (addReservation.Result == -4)
             return BadRequest("Cos");
             
-        if (createdAppointment.Result == 1)
+        if (addReservation.Result == 1)
             return Created(nameof(getattractions_booking), "Created appointment");
 
         return BadRequest("No");
