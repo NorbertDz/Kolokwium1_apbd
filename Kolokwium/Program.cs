@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IXService,XService>(); a //tu trzeba dodawac swoje interfejsyService i Service
+builder.Services.AddScoped<IreservationIdService,reservationIdService>();
+builder.Services.AddScoped<IaddReservationService,addReservationService>();
 
 var app = builder.Build();
 
