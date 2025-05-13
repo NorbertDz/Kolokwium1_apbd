@@ -2,7 +2,7 @@
 
 namespace Kolokwium.Service;
 
-public interface IaddReservationService
+public interface IaddReservationService 
 {
     Task<int> addReservation(getAttractions_Booking getattractions_booking);
 }
